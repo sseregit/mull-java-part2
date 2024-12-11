@@ -33,12 +33,12 @@ public class Main {
             return new String(string);
         }
 
-        public void setString(String string) {
-            this.string = string.getBytes();
+        public void setString(String param) {
+            this.string = param.getBytes();
         }
 
-        public int compareTo(String string) {
-            return string.compareTo(this.getString());
+        public int compareTo(String param) {
+            return param.compareTo(this.getString());
         }
     }
 }
