@@ -1,6 +1,6 @@
 package section04;
 
-class MyTest {
+class MyTest1 {
     private final int parentData = 10;
 
     public int getData() {
@@ -12,7 +12,7 @@ class MyTest {
     }
 }
 
-class MyTestEx extends MyTest {
+class MyTestEx1 extends MyTest1 {
     private int childData = 20;
 
     public int getChildData() {
@@ -22,7 +22,7 @@ class MyTestEx extends MyTest {
 
 public class InheritSample {
     public static void main(String[] args) {
-        MyTestEx t = new MyTestEx();
+        MyTestEx1 t = new MyTestEx1();
         System.out.println(t.getData());
         System.out.println(t.getChildData());
     }
