@@ -1,8 +1,19 @@
-package section02;
+package section03.exec1;
 
-class MyStringExec1 {
+class MyString {
 
     private byte[] string;
+
+    public MyString() {
+    }
+
+    public MyString(String param) {
+        this.string = param.getBytes();
+    }
+
+    public MyString(int param) {
+        this.string = String.valueOf(param).getBytes();
+    }
 
     public int length() {
         if (this.string == null) {

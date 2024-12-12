@@ -1,9 +1,9 @@
-package section02;
+package section02.exec1;
 
 public class Exec1 {
 
     public static void main(String[] args) {
-        MyStringExec1 str = new MyStringExec1();
+        MyString str = new MyString();
         System.out.println(str.length());
         System.out.println(str.getString());
 

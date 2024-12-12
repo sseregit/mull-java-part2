@@ -1,17 +1,21 @@
-package section03;
+package section03.exec2;
 
-class MyStringExec1 {
+class MyString {
 
     private byte[] string;
 
-    public MyStringExec1() {
+    public MyString() {
     }
 
-    public MyStringExec1(String param) {
+    public MyString(MyString rhs) {
+        this.deepCopy(rhs);
+    }
+
+    public MyString(String param) {
         this.string = param.getBytes();
     }
 
-    public MyStringExec1(int param) {
+    public MyString(int param) {
         this.string = String.valueOf(param).getBytes();
     }
 
@@ -37,5 +41,13 @@ class MyStringExec1 {
 
     public int compareTo(String param) {
         return param.compareTo(this.getString());
+    }
+
+    public void deepCopy(MyString rhs) {
+        this.string = rhs.string.clone();
+        /*
+        this.string = new byte[rhs.length()];
+        System.arraycopy(rhs.string, 0, this.string, 0, rhs.string.length);
+        */
     }
 }
