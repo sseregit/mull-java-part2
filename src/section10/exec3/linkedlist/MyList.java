@@ -1,8 +1,6 @@
 package section10.exec3.linkedlist;
 
-import java.util.Iterator;
-
-public class MyList implements Iterable<MyNode> {
+public class MyList {
 
     public final MyNode head;
 
@@ -23,9 +21,15 @@ public class MyList implements Iterable<MyNode> {
     public boolean addNewNode(MyNode newNode) {
         if (findNode(newNode.getKey()) != null) return false;
 
-        newNode.next = head.getNext();
-        head.next = newNode;
+        if (onAddNewNode(newNode)) {
+            newNode.next = head.getNext();
+            head.next = newNode;
+            return true;
+        };
+        return false;
+    }
 
+    protected boolean onAddNewNode(MyNode newNode) {
         return true;
     }
 
@@ -37,6 +41,7 @@ public class MyList implements Iterable<MyNode> {
             toDelete = prev.getNext();
 
             if (toDelete.getKey().compareTo(key) == 0) {
+                onRemoveNode(toDelete);
                 prev.next = toDelete.getNext();
                 return true;
             }
@@ -47,10 +52,14 @@ public class MyList implements Iterable<MyNode> {
         return false;
     }
 
-    @Override
-    public Iterator<MyNode> iterator() {
-        return new MyIterator(head.next);
-    }
+    public void onRemoveNode(MyNode node) {}
 
+    public MyIterator makeIterator() {
+        MyIterator it = new MyIterator();
+        it.head = head.getNext();
+        it.current = head.getNext();
+
+        return it;
+    }
 
 }

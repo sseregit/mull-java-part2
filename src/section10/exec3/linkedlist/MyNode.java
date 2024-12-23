@@ -11,4 +11,6 @@ public abstract class MyNode {
     public abstract String getKey();
 
     public abstract void printNode();
+
+    public abstract MyNode getNode();
 }

@@ -1,24 +1,20 @@
 package section10.exec3.linkedlist;
 
-import java.util.Iterator;
+public class MyIterator {
+    protected MyNode head = null;
+    protected MyNode current = null;
 
-public class MyIterator implements Iterator<MyNode> {
+    public MyNode getCurrent() {
+        if (current == null) {
+            return null;
+        }
 
-    private MyNode myNode;
-
-    public MyIterator(MyNode myNode) {
-        this.myNode = myNode;
+        return current.getNode();
     }
 
-    @Override
-    public boolean hasNext() {
-        return myNode != null;
-    }
-
-    @Override
-    public MyNode next() {
-        MyNode result = myNode;
-        myNode = myNode.getNext();
-        return result;
+    public void moveNext() {
+        if (current != null) {
+            current = current.getNext();
+        }
     }
 }

@@ -1,5 +1,6 @@
 package section10.exec3;
 
+import section10.exec3.linkedlist.MyIterator;
 import section10.exec3.linkedlist.MyList;
 import section10.exec3.linkedlist.MyNode;
 
@@ -36,12 +37,6 @@ class UserInterface {
         }
     }
 
-    void printAll() {
-        for (MyNode myNode : myList) {
-            myNode.printNode();
-        }
-    }
-
     void removeUser() {
         Scanner s = new Scanner(System.in);
         System.out.print("Name: ");
@@ -60,6 +55,15 @@ class UserInterface {
         System.out.print(": ");
         int input = s.nextInt();
         return input;
+    }
+
+    public void printAll() {
+        MyIterator it = myList.makeIterator();
+        UserData currentNode;
+        while((currentNode = (UserData)it.getCurrent()) != null) {
+            currentNode.printNode();
+            it.moveNext();
+        }
     }
 
 
