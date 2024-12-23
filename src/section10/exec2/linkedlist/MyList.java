@@ -1,7 +1,5 @@
 package section10.exec2.linkedlist;
 
-import section10.exec2.UserData;
-
 public class MyList {
 
     public final MyNode head;
@@ -20,12 +18,11 @@ public class MyList {
         return null;
     }
 
-    public boolean addNewNode(String name, String phone) {
-        if (findNode(name) != null) return false;
+    public boolean addNewNode(MyNode newNode) {
+        if (findNode(newNode.getKey()) != null) return false;
 
-        MyNode newUser = new UserData(name, phone);
-        newUser.next = head.getNext();
-        head.next = newUser;
+        newNode.next = head.getNext();
+        head.next = newNode;
 
         return true;
     }

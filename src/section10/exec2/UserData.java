@@ -13,11 +13,6 @@ public final class UserData extends MyNode {
     }
 
     @Override
-    public MyNode getNext() {
-        return this.next;
-    }
-
-    @Override
     public String getKey() {
         return this.name;
     }

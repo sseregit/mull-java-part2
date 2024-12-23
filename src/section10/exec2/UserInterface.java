@@ -20,7 +20,7 @@ class UserInterface {
         System.out.print("Phone: ");
         String phone = s.nextLine();
 
-        myList.addNewNode(name, phone);
+        myList.addNewNode(new UserData(name, phone));
     }
 
     void searchUser() {
