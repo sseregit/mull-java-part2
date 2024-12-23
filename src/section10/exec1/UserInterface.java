@@ -4,7 +4,11 @@ import java.util.Scanner;
 
 class UserInterface {
 
-    private final MyList myList = new MyList();
+    private final MyList myList;
+
+    public UserInterface(MyList myList) {
+        this.myList = myList;
+    }
 
     void addUser() {
         Scanner s = new Scanner(System.in);
@@ -30,7 +34,7 @@ class UserInterface {
     }
 
     void printAll() {
-        UserData tmp = MyList.head.next;
+        UserData tmp = myList.head.next;
         while (tmp != null) {
             System.out.println(tmp.name + "\t" + tmp.phone);
             tmp = tmp.next;

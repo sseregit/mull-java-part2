@@ -2,7 +2,7 @@ package section10.exec1;
 
 public class MyList {
 
-    static final UserData head = new UserData("Dummy", "Dummy");
+    final UserData head = new UserData("Dummy", "Dummy");
 
     UserData findNode(String name) {
         UserData tmp = head.next;
